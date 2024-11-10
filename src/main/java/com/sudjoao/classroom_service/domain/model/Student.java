@@ -11,4 +11,13 @@ public class Student {
     @ManyToOne
     Classroom classroom;
     String name;
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", classroom=" + classroom +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
