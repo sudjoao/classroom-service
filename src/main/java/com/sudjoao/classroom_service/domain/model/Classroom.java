@@ -1,5 +1,6 @@
 package com.sudjoao.classroom_service.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -12,6 +13,7 @@ public class Classroom {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     @OneToMany(mappedBy = "classroom", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonManagedReference
     List<Student> students;
     Long userId;
     String name;
