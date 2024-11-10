@@ -12,6 +12,11 @@ public class Classroom {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     @OneToMany(mappedBy = "classroom", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonManagedReference
     List<Student> students;
@@ -40,5 +45,13 @@ public class Classroom {
                 "id=" + id +
                 ", userId=" + userId +
                 '}';
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

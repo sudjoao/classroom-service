@@ -17,8 +17,6 @@ public class ClassroomController {
 
     @GetMapping("{id}")
     ClassroomInput getById(@PathVariable Long id) {
-        System.out.println(id);
-
         return ClassroomInput.fromDomain(getClassroomUseCase.run(id));
     }
 }
